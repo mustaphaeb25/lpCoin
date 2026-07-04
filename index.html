@@ -893,29 +893,7 @@
             resetAutoSlide();
         }
         
-        function updateCarousel() {
-            const track = document.getElementById('temoignages-track');
-            const dots = document.querySelectorAll('#temoignages-dots button');
-            track.style.transform = `translateX(-${currentSlide * 100}%)`;
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('bg-primary-500', i === currentSlide);
-                dot.classList.toggle('bg-primary-200', i !== currentSlide);
-            });
-        }
         
-        function startAutoSlide() {
-            autoSlideInterval = setInterval(() => {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                updateCarousel();
-            }, 4000);
-        }
-        
-        function resetAutoSlide() {
-            clearInterval(autoSlideInterval);
-            startAutoSlide();
-        }
-        
-        startAutoSlide();
         
         function toggleFaq(btn) {
             const content = btn.nextElementSibling;
@@ -1078,7 +1056,7 @@
     <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-primary-200 p-4 z-50 md:hidden flex items-center justify-between gap-4 shadow-lg">
         <div>
             <p class="font-bold text-primary-900">Commencer gratuitement</p>
-            
+            <p class="text-xs text-primary-600">Sans carte bancaire</p>
         </div>
         <a href="https://go.coincarriere.com/5A4J/2J2C9/?px=2049096586012364&source=fb&visitor_id={fbclid}&fbclid={fbclid}&campaign_id={{campaign.id}}&adset_id={{adset.id}}&ad_id={{ad.id}}&ad_name={{ad.name}}&adset_name={{adset.name}}&campaign_name={{campaign.name}}" class="bg-primary-500 hover:bg-primary-600 text-white font-bold px-6 py-3 rounded-xl transition-all">
             Aller
